@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sqlalchemy
-from monPackage.fichier import creationFichier
+from monPackage.fichier import creationFichierxpsf
+from monPackage.fichier import creationFichierm3u
+from monPackage.fichier import creationFichierpls
 
 engine = sqlalchemy.create_engine('postgresql://c.sebillet:passe@172.16.99.2:5432/radio_libre')
 
@@ -28,4 +30,7 @@ result = conn.execute(s)
 '''for row in result:
     print(row)'''
 
-creationFichier("testm3u", "m3u", result)
+
+#creationFichierxpsf("testxpsf", "xpsf", result)
+#creationFichierm3u("testm3u", "m3u", result)
+creationFichierpls("testpls", "pls", result)
